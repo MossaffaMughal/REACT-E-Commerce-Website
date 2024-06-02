@@ -1,5 +1,28 @@
+import { useNavigate } from "react-router-dom";
+import "./home.css";
+
 const Home = () => {
-  return <h1>Home Page</h1>;
+  const navigate = useNavigate();
+  return (
+    <>
+      <button
+        className="btn"
+        onClick={() => {
+          navigate("/products");
+        }}
+      >
+        Products
+      </button>
+      <button
+        className="btn"
+        onClick={() => {
+          navigate("/categories");
+        }}
+      >
+        Categories
+      </button>
+    </>
+  );
 };
 
 export default Home;

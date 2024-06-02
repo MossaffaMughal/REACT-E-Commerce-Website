@@ -1,5 +1,12 @@
+import Routing from "./Routing";
+import Home from "./Pages/Home";
+
 const App = () => {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Routing />
+    </>
+  );
 };
 
 export default App;
