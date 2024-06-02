@@ -1,17 +1,17 @@
 .btn {
-  background-color: rgb(102, 63, 105); /* Green background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 15px 32px; /* Some padding */
-  text-align: center; /* Center the text (if there is any) */
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Get the element to line up nicely */
-  font-size: 16px; /* Increase font size */
-  margin: 4px 2px; /* Add some space between buttons */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: rgb(102, 63, 105);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
   border-radius: 4px;
 }
 
 .btn:hover {
-  background-color: #a3668f; /* Darker green on hover */
+  background-color: #a3668f;
 }
