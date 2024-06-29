@@ -7,6 +7,7 @@ import ProductDetails from "../Pages/ProductDetails";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import Cart from "../Pages/Cart";
+import ProtectedRoute from "./ProtectedRoutes";
 
 const Routing = () => {
   return (
@@ -21,7 +22,14 @@ const Routing = () => {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<Error />} />
       </Routes>
     </>
