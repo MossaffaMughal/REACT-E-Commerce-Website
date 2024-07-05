@@ -46,7 +46,7 @@ const signUp = () => {
           value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
-          className={errors.name && touched.name ? "input-error" : ""}
+          className={errors.name && touched.name ? "input-error" : "input"}
         />
         {errors.name && touched.name && <p className="errors">{errors.name}</p>}
         <label htmlFor="email">Email</label>
@@ -57,7 +57,7 @@ const signUp = () => {
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
-          className={errors.email && touched.email ? "input-error" : ""}
+          className={errors.email && touched.email ? "input-error" : "input"}
         />
         {errors.email && touched.email && (
           <p className="errors">{errors.email}</p>
@@ -71,7 +71,9 @@ const signUp = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           className={
-            errors.contactNumber && touched.contactNumber ? "input-error" : ""
+            errors.contactNumber && touched.contactNumber
+              ? "input-error"
+              : "input"
           }
         />
         {errors.contactNumber && touched.contactNumber && (
@@ -85,7 +87,9 @@ const signUp = () => {
           value={values.password}
           onChange={handleChange}
           onBlur={handleBlur}
-          className={errors.password && touched.password ? "input-error" : ""}
+          className={
+            errors.password && touched.password ? "input-error" : "input"
+          }
         />
         {errors.password && touched.password && (
           <p className="errors">{errors.password}</p>
@@ -101,7 +105,7 @@ const signUp = () => {
           className={
             errors.confirmPassword && touched.confirmPassword
               ? "input-error"
-              : ""
+              : "input"
           }
         />
         {errors.confirmPassword && touched.confirmPassword && (

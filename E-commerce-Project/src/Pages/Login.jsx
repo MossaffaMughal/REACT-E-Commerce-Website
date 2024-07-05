@@ -43,7 +43,9 @@ const Login = () => {
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
-          className={errors.email && touched.email ? "input-error" : ""}
+          className={
+            errors.email && touched.email ? "input-error" : "input-login"
+          }
         />
         {errors.email && touched.email && (
           <p className="errors">{errors.email}</p>
@@ -56,7 +58,9 @@ const Login = () => {
           value={values.password}
           onChange={handleChange}
           onBlur={handleBlur}
-          className={errors.password && touched.password ? "input-error" : ""}
+          className={
+            errors.password && touched.password ? "input-error" : "input-login"
+          }
         />
         {errors.password && touched.password && (
           <p className="errors">{errors.password}</p>

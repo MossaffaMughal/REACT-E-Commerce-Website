@@ -5,7 +5,6 @@
   align-items: center;
   min-height: 100vh;
   background-color: #243049;
-  color: white;
 }
 
 nav {
@@ -20,9 +19,9 @@ form {
   flex-direction: column;
 }
 
-input {
+.input-login {
   margin-top: 5px;
-  padding: 10px;
+  padding: 5px;
   width: 500px;
   border-radius: 5px;
   outline: none;
@@ -30,6 +29,7 @@ input {
 
 label {
   margin-top: 5px;
+  color: white;
 }
 
 .btn {

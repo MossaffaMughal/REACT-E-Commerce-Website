@@ -1,5 +1,4 @@
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
-import "./navbar.css";
 import { useEffect } from "react";
 
 const Navbar = () => {
@@ -21,18 +20,21 @@ const Navbar = () => {
           My Store
         </h1>
       </div>
-      <div className="flex gap-4">
-        <NavLink className="text-lg text-gray-300 hover:text-white" to={"/"}>
+      <div>
+        <NavLink
+          className="text-lg p-4 text-gray-300 hover:text-white"
+          to={"/"}
+        >
           Home
         </NavLink>
         <NavLink
-          className="text-lg text-gray-300 hover:text-white"
+          className="text-lg p-4 text-gray-300 hover:text-white"
           to={"/products"}
         >
           Products
         </NavLink>
         <NavLink
-          className="text-lg text-gray-300 hover:text-white"
+          className="text-lg p-4 text-gray-300 hover:text-white"
           to={"/categories"}
         >
           Categories

@@ -5,7 +5,7 @@
   align-items: center;
   min-height: 100vh;
   background-color: #243049;
-  color: white;
+  /* color: white; */
 }
 
 nav {
@@ -20,9 +20,9 @@ form {
   flex-direction: column;
 }
 
-input {
+.input {
   margin-top: 5px;
-  padding: 10px;
+  padding: 5px;
   width: 500px;
   border-radius: 5px;
   outline: none;
@@ -30,11 +30,12 @@ input {
 
 label {
   margin-top: 5px;
+  color: white;
 }
 
 .btn {
   font-size: 15px;
-  margin: 20px auto; /*  align-self: center; can also be used to center*/
+  margin: 20px auto;
   height: 50px;
   border-radius: 5px;
   cursor: pointer;
