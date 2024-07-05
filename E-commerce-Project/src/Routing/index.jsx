@@ -7,26 +7,68 @@ import ProductDetails from "../Pages/ProductDetails";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import Cart from "../Pages/Cart";
+import LayoutOne from "../Layouts/LayoutOne";
 import ProtectedRoute from "./ProtectedRoutes";
 
 const Routing = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products/:category?" element={<Products />} />
-        <Route path="/categories" element={<Categories />} />
+        <Route
+          path="/"
+          element={
+            <LayoutOne>
+              <Home />
+            </LayoutOne>
+          }
+        />
+        <Route
+          path="/products/:category?"
+          element={
+            <LayoutOne>
+              <Products />
+            </LayoutOne>
+          }
+        />
+        <Route
+          path="/categories"
+          element={
+            <LayoutOne>
+              <Categories />
+            </LayoutOne>
+          }
+        />
         <Route
           path="/product-details/:ProductID"
-          element={<ProductDetails />}
+          element={
+            <LayoutOne>
+              <ProductDetails />
+            </LayoutOne>
+          }
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/login"
+          element={
+            <LayoutOne>
+              <Login />
+            </LayoutOne>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <LayoutOne>
+              <Signup />
+            </LayoutOne>
+          }
+        />
         <Route
           path="/cart"
           element={
             <ProtectedRoute>
-              <Cart />
+              <LayoutOne>
+                <Cart />
+              </LayoutOne>
             </ProtectedRoute>
           }
         />
