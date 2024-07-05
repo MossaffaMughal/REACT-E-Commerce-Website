@@ -4,9 +4,9 @@ import "./home.css";
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <div className="homeContainer">
       <button
-        className="btn"
+        className="btn-btn"
         onClick={() => {
           navigate("/products");
         }}
@@ -14,14 +14,30 @@ const Home = () => {
         Products
       </button>
       <button
-        className="btn"
+        className="btn-btn"
         onClick={() => {
           navigate("/categories");
         }}
       >
         Categories
       </button>
-    </>
+      <button
+        className="btn-btn"
+        onClick={() => {
+          navigate("/login");
+        }}
+      >
+        Login
+      </button>
+      <button
+        className="btn-btn"
+        onClick={() => {
+          navigate("/signup");
+        }}
+      >
+        SignUp
+      </button>
+    </div>
   );
 };
 

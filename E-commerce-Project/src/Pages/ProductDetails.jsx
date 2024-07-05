@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Products from "./Products";
 
 const ProductDetails = () => {
   const params = useParams();
