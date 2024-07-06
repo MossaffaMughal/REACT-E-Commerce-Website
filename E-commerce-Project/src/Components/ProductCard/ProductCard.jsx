@@ -13,6 +13,7 @@ const ProductCard = (props) => {
   return (
     <div className="cardContainer">
       <h3
+        className="hover:cursor-pointer"
         onClick={() => {
           navigate("/product-details/" + item.id);
         }}

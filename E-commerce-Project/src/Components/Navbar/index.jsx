@@ -10,9 +10,10 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <div className="w-full flex bg-[#243049] p-4 items-center justify-between text-white">
+    <div className="flex w-full items-center justify-between bg-[#243049] p-4 text-white">
       <div>
         <h1
+          className="p-2 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
           onClick={() => {
             navigate("/");
           }}
@@ -22,19 +23,19 @@ const Navbar = () => {
       </div>
       <div>
         <NavLink
-          className="text-lg p-4 text-gray-300 hover:text-white"
+          className="p-4 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
           to={"/"}
         >
           Home
         </NavLink>
         <NavLink
-          className="text-lg p-4 text-gray-300 hover:text-white"
+          className="p-4 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
           to={"/products"}
         >
           Products
         </NavLink>
         <NavLink
-          className="text-lg p-4 text-gray-300 hover:text-white"
+          className="p-4 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
           to={"/categories"}
         >
           Categories
