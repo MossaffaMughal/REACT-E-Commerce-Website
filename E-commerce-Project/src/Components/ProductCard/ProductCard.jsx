@@ -6,10 +6,6 @@ const ProductCard = (props) => {
   const { item } = props; // Destructuring. props se jo item naam ka object ayega, woh yahan is item k variable mei store ho jaega
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   //  MAKE AN API CALL FOR PARMAS.PRODUCT_NUM
-  // }, []);
-
   return (
     <div className="cardContainer">
       <h3
@@ -18,9 +14,12 @@ const ProductCard = (props) => {
           navigate("/product-details/" + item.id);
         }}
       >
+        <span className="font-bold"> Product Name: </span>
         {item.title}
       </h3>
-      <p>{item.price}</p>
+      <p>
+        <span className="font-bold"> Price: </span>${item.price}
+      </p>
     </div>
   );
 };
