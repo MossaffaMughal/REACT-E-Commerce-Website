@@ -14,11 +14,14 @@ const Navbar = () => {
   const { loginDetails, setLoginDetails } = useContext(LoginContext);
   const isLoggedIn = loginDetails.length > 0;
 
+  const getActiveClass = (isActive) =>
+    isActive ? "text-white" : "text-gray-300";
+
   return (
     <div className="flex w-full items-center justify-between bg-[#243049] p-4 text-white">
       <div>
         <h1
-          className="p-2 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
+          className="p-1 text-3xl font-bold text-gray-300 hover:cursor-pointer hover:text-white"
           onClick={() => {
             navigate("/");
           }}
@@ -28,32 +31,40 @@ const Navbar = () => {
       </div>
       <div>
         <NavLink
-          className="p-4 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
+          className={({ isActive }) =>
+            `p-4 text-lg font-bold hover:cursor-pointer hover:text-white ${getActiveClass(isActive)}`
+          }
           to={"/"}
         >
           Home
         </NavLink>
         <NavLink
-          className="p-4 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
+          className={({ isActive }) =>
+            `p-4 text-lg font-bold hover:cursor-pointer hover:text-white ${getActiveClass(isActive)}`
+          }
           to={"/products"}
         >
           Products
         </NavLink>
         <NavLink
-          className="p-4 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
+          className={({ isActive }) =>
+            `p-4 text-lg font-bold hover:cursor-pointer hover:text-white ${getActiveClass(isActive)}`
+          }
           to={"/categories"}
         >
           Categories
         </NavLink>
         <NavLink
-          className="p-4 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
+          className={({ isActive }) =>
+            `p-4 text-lg font-bold hover:cursor-pointer hover:text-white ${getActiveClass(isActive)}`
+          }
           to={"/profile"}
         >
           Profile
         </NavLink>
         {isLoggedIn && (
           <NavLink
-            className="p-4 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
+            className="p-1 text-lg font-bold text-gray-300 hover:cursor-pointer hover:text-white"
             onClick={() => {
               setLoginDetails([]);
             }}
@@ -63,7 +74,9 @@ const Navbar = () => {
           </NavLink>
         )}
         <NavLink
-          className="p-4 text-lg text-gray-300 hover:cursor-pointer hover:text-white"
+          className={({ isActive }) =>
+            `p-4 text-lg font-bold hover:cursor-pointer hover:text-white ${getActiveClass(isActive)}`
+          }
           to={"/cart"}
         >
           My Cart
