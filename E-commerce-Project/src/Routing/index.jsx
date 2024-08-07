@@ -9,6 +9,7 @@ import Signup from "../Pages/Signup";
 import Cart from "../Pages/Cart";
 import LayoutOne from "../Layouts/LayoutOne";
 import ProtectedRoute from "./ProtectedRoutes";
+import Profile from "../Pages/Profile";
 
 const Routing = () => {
   return (
@@ -62,16 +63,32 @@ const Routing = () => {
             </LayoutOne>
           }
         />
-        <Route
-          path="/cart"
-          element={
-            <ProtectedRoute>
+        <Route element={<ProtectedRoute />}>
+          <Route
+            path="/cart"
+            element={
               <LayoutOne>
                 <Cart />
               </LayoutOne>
-            </ProtectedRoute>
-          }
-        />
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <LayoutOne>
+                <Profile />
+              </LayoutOne>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <LayoutOne>
+                <Cart />
+              </LayoutOne>
+            }
+          />
+        </Route>
         <Route path="*" element={<Error />} />
       </Routes>
     </>

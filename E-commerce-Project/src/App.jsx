@@ -1,9 +1,15 @@
 import Routing from "./Routing";
+import { LoginContextProvider } from "./contexts/loginContext";
+import { RedirectProvider } from "./contexts/RedirectContext";
 
 const App = () => {
   return (
     <>
-      <Routing />
+      <RedirectProvider>
+        <LoginContextProvider>
+          <Routing />
+        </LoginContextProvider>
+      </RedirectProvider>
     </>
   );
 };

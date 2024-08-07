@@ -5,22 +5,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="homeContainer">
-      <button
-        className="btn-btn"
-        onClick={() => {
-          navigate("/products");
-        }}
-      >
-        Products
-      </button>
-      <button
-        className="btn-btn"
-        onClick={() => {
-          navigate("/categories");
-        }}
-      >
-        Categories
-      </button>
+      <h1 className="heading">Welcome to My Store!</h1>
       <button
         className="btn-btn"
         onClick={() => {

@@ -2,16 +2,25 @@ import { useFormik } from "formik";
 import basicSchema from "../schemas/index-login";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { useContext } from "react";
+import { LoginContext } from "../contexts/loginContext";
+import { RedirectContext } from "../contexts/RedirectContext";
 
 const Login = () => {
+  const { loginDetails, setLoginDetails } = useContext(LoginContext);
+  const { redirectPath, setRedirectPath } = useContext(RedirectContext);
   const navigate = useNavigate();
+
   const onSubmit = async (values, actions) => {
     console.log(values);
     console.log(actions);
     await new Promise((resolve) => setTimeout(resolve, 1000));
+    setLoginDetails([values]);
     actions.resetForm();
-    navigate("/");
+    setRedirectPath("/");
+    navigate(redirectPath);
   };
+
   const {
     values,
     errors,

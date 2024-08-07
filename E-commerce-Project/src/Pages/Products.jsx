@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "../Components/ProductCard/ProductCard";
+import "./Product.css";
+
 const Products = () => {
   const [items, setItems] = useState([]);
   const [searchedItems, setSearchedItems] = useState([]);
@@ -75,42 +77,43 @@ const Products = () => {
     <div>
       <div>
         <input
-          className="m-2 rounded-lg border-2 border-black p-1"
+          className="m-5 rounded-lg border-2 border-black p-1"
           type="text"
           placeholder="Search"
           onChange={handleSearch}
         />
+
+        <label htmlFor="sortOrderPrice" className="m-2 text-white">
+          Price:
+        </label>
+        <select
+          className="m-2 rounded-lg border-2 border-black p-1"
+          value={sortOrderPrice}
+          onChange={(e) => setSortOrderPrice(e.target.value)}
+        >
+          <option value="">Select an Option</option>
+          <option value="asc">Low to High</option>
+          <option value="desc">High to Low</option>
+        </select>
+
+        <label htmlFor="sortOrderTitle" className="m-2 text-white">
+          Title:
+        </label>
+        <select
+          className="m-2 rounded-lg border-2 border-black p-1"
+          value={sortOrderTitle}
+          onChange={(e) => setSortOrderTitle(e.target.value)}
+        >
+          <option value="">Select an Option</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
       </div>
-
-      <label htmlFor="sortOrderPrice" className="m-2 text-black">
-        Price:
-      </label>
-      <select
-        className="m-2 rounded-lg border-2 border-black p-1"
-        value={sortOrderPrice}
-        onChange={(e) => setSortOrderPrice(e.target.value)}
-      >
-        <option value="">Select an Option</option>
-        <option value="asc">Low to High</option>
-        <option value="desc">High to Low</option>
-      </select>
-
-      <label htmlFor="sortOrderTitle" className="m-2 text-black">
-        Title:
-      </label>
-      <select
-        className="m-2 rounded-lg border-2 border-black p-1"
-        value={sortOrderTitle}
-        onChange={(e) => setSortOrderTitle(e.target.value)}
-      >
-        <option value="">Select an Option</option>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-      </select>
-
-      {searchedItems.map((itemEntry) => {
-        return <ProductCard key={itemEntry.id} item={itemEntry} />;
-      })}
+      <div className="cardsGrid">
+        {searchedItems.map((itemEntry) => {
+          return <ProductCard key={itemEntry.id} item={itemEntry} />;
+        })}
+      </div>
     </div>
   );
 };

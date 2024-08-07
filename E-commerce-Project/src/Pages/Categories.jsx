@@ -24,16 +24,16 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="p-4 font-mono text-2xl">Categories</h1>
-      <ul>
+    <div className="flex h-screen flex-col items-center justify-center bg-[#425170]">
+      <h1 className="p-4 font-mono text-3xl text-white">Categories</h1>
+      <ul className="flex flex-col items-center">
         {categories.map((category, index) => (
           <button
             key={index}
             onClick={() => {
               navigate(`/products/${category.toLowerCase()}`);
             }}
-            className="m-5 inline-block rounded-md p-4 shadow-md hover:cursor-pointer hover:border-blue-600 hover:bg-blue-400 hover:text-white"
+            className="m-5 inline-block w-[300px] cursor-pointer rounded-md bg-[#cae0f6] p-4 text-[18px] shadow-md transition-all duration-300 ease-in-out hover:border-[#2b6cb0] hover:bg-[#63b3ed] hover:text-[20px] hover:text-white"
           >
             {category}
           </button>

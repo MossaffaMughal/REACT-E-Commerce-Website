@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #243049;
+  background-color: #425170;
 }
 
 nav {
@@ -47,6 +47,7 @@ label {
   background-color: #4c659a;
   border: none;
   color: white;
+  font-size: 20px;
 }
 
 .btn:disabled {
